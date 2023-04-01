@@ -1,37 +1,20 @@
 '''
-3. 같은 수 여러번 가능
+1~N까지 자연수 중 M개 고른 수열
+길이 M 수열 모두 출력 = 가능한 모든 경우
+같은 수 여러번 가능
 중복 수열 X
 '''
-def dfs(n, lst):
+# n : 선택한 숫자 개수
+def dfs(n, now):
     if n == M:
-        ans.append(lst)
+        ans.append(now)
         return
 
     for i in range(1, N+1):
-        dfs(n+1, lst+[i])
+        dfs(n+1, now+[i]) # list 끼리 더하기
 
 N, M = map(int, input().split())
 ans = []
 dfs(0, [])
-
 for lst in ans:
-    print(*lst)
-'''
-4 2
-1 1
-1 2
-1 3
-1 4
-2 1
-2 2
-2 3
-2 4
-3 1
-3 2
-3 3
-3 4
-4 1
-4 2
-4 3
-4 4
-'''
+    print(*lst) # 리스트 언패킹 & 공백 출력
