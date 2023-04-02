@@ -43,6 +43,8 @@ while check_list[0][0]:
     heapq.heappush(check_list, (length, q))
     score //= 10
 
+    print(check_list)
+    print(scores)
 # 여기서 그리디 진행
 # 이후 점수순으로 9 ~ 0 까지 dictionary 만들자
 while True:
